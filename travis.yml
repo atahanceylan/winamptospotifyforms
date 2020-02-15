@@ -1,0 +1,8 @@
+language: csharp
+solution: winamptospotifyforms.sln
+install:
+  - nuget restore winamptospotifyforms.sln
+  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+script:
+  - msbuild /p:Configuration=Release winamptospotifyforms.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./MyProject.Tests/bin/Release/MyProject.Tests.dll
