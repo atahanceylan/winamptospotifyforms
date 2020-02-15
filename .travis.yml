@@ -1,6 +1,6 @@
 language: csharp
 solution: winamptospotifyforms.sln
 mono: none
-dotnet: 2.2
+dotnet: 3.1
 script:
  - dotnet restore
