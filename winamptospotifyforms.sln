@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winamptospotifyforms", "winamptospotifyforms\winamptospotifyforms.csproj", "{BFD19EB0-31E2-4A4A-B8FB-58BA4A02695A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winamptospotifyTest", "winamptospotifyTest\winamptospotifyTest.csproj", "{6CBB53DF-0082-4272-9CE7-97579B8AB6AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFD19EB0-31E2-4A4A-B8FB-58BA4A02695A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD19EB0-31E2-4A4A-B8FB-58BA4A02695A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD19EB0-31E2-4A4A-B8FB-58BA4A02695A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD19EB0-31E2-4A4A-B8FB-58BA4A02695A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6CBB53DF-0082-4272-9CE7-97579B8AB6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBB53DF-0082-4272-9CE7-97579B8AB6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBB53DF-0082-4272-9CE7-97579B8AB6AB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBB53DF-0082-4272-9CE7-97579B8AB6AB}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C640C774-3774-48AA-9D22-1E92383B3C53}
+	EndGlobalSection
+EndGlobal
