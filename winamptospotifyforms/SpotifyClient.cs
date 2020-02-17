@@ -148,7 +148,7 @@ namespace winamptospotifyforms
                                 var tracks = results.tracks;
                                 if (tracks.items.Count > 0)
                                 {
-                                    trackInfoDict.Add(tracks.items[0].uri, tracks.items[0].name);
+                                    trackInfoDict.TryAdd(tracks.items[0].uri, tracks.items[0].name);
                                     logger.Information($"Track {tracks.items[0].name} found.");
                                 }
                             }
