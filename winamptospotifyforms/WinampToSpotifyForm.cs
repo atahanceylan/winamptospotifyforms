@@ -79,7 +79,7 @@ namespace winamptospotifyforms
 
             resultTxt = new TextBox()
             {
-                Size = new Size(400, 250),
+                Size = new Size(600, 600),
                 Location = new Point(15, 80),
                 Multiline = true
             };

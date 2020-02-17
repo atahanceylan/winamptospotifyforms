@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace winamptospotifyforms
 {
@@ -32,8 +33,8 @@ namespace winamptospotifyforms
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.TopMost = true;            
-            this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(900, 750);
+            //this.WindowState = FormWindowState.Maximized;
             this.Text = "Winamp To Spotify";
         }
 
