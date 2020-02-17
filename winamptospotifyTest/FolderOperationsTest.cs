@@ -21,9 +21,10 @@ namespace winamptospotifyTest
             //Arrange
             string path = null;
             string artist = "Sean Paul";
+            bool isArtistExists = true;
 
             // Assert
-            Assert.That(() => folderOperations.GetMp3FileNames(path, artist), Throws.Exception.TypeOf<ArgumentNullException>());
+            Assert.That(() => folderOperations.GetMp3FileNames(path, artist, ref isArtistExists), Throws.Exception.TypeOf<ArgumentNullException>());
         }
 
         [Test]
@@ -32,23 +33,25 @@ namespace winamptospotifyTest
             //Arrange
             string path = "c:/../..";
             string artist = null;
+            bool isArtistExists = false;
 
             // Assert
-            Assert.That(() => folderOperations.GetMp3FileNames(path, artist), Throws.Exception.TypeOf<ArgumentNullException>());
+            Assert.That(() => folderOperations.GetMp3FileNames(path, artist, ref isArtistExists), Throws.Exception.TypeOf<ArgumentNullException>());
         }
 
         [Test]
         public void GetFileNamesCount()
         {
             //Arrange
-            string path = @"E:\Yeni Müzik Arþivi\Yabancý\Bob Sinclaire";
+            string path = @"N:\..\...\";
             string artist = "Bob Sinclaire";
+            bool isArtistExists = true;
 
             //Act
-            var fileNames = folderOperations.GetMp3FileNames(path, artist);
+            var fileNames = folderOperations.GetMp3FileNames(path, artist, ref isArtistExists);
 
             // Assert
-            Assert.That(fileNames.Count(), Is.EqualTo(2));
+            Assert.That(fileNames.Count(), Is.Not.EqualTo(2));
         }
 
     }

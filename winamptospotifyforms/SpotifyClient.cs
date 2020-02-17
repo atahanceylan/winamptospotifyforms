@@ -120,14 +120,18 @@ namespace winamptospotifyforms
             Dictionary<string, string> trackInfoDict = new Dictionary<string, string>();
 
             string artist = filePath.Split('\\')[filePath.Split('\\').Length - 1].Split(' ')[0];
-            List<string> fileNamesList = new FolderOperations().GetMp3FileNames(filePath, artist);
+            bool isArtistNameExistsInFolderPath = false;
+            List<string> fileNamesList = new FolderOperations().GetMp3FileNames(filePath, artist, ref isArtistNameExistsInFolderPath);
 
             if (fileNamesList.Count > 0)
             {
                 foreach (var item in fileNamesList)
                 {
                     var qb = new QueryBuilder();
-                    qb.Add("q", $"artist:{artist} " + item);
+                    var queryTrackString = item;
+                    if (isArtistNameExistsInFolderPath)
+                        queryTrackString += $" artist:{artist}";
+                    qb.Add("q", queryTrackString);
                     qb.Add("type", "track");
                     qb.Add("limit", "1");
                     try
@@ -143,7 +147,7 @@ namespace winamptospotifyforms
                                 var results = JsonConvert.DeserializeObject<SpotifyJsonResponseWrapper.RootObject>(content);
                                 var tracks = results.tracks;
                                 if (tracks.items.Count > 0)
-                                {                                    
+                                {
                                     trackInfoDict.Add(tracks.items[0].uri, tracks.items[0].name);
                                     logger.Information($"Track {tracks.items[0].name} found.");
                                 }

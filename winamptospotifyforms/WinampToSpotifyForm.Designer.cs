@@ -32,8 +32,8 @@ namespace winamptospotifyforms
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.TopMost = true;            
-            this.WindowState = FormWindowState.Maximized;
+            //this.TopMost = true;            
+            this.WindowState = FormWindowState.Normal;
             this.Text = "Winamp To Spotify";
         }
 

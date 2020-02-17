@@ -15,20 +15,21 @@ namespace winamptospotifyforms
         /// <param name="path">Selected folder path that contains mp3s</param>
         /// <param name="artist">This value get from folder get more successful results</param>
         /// <returns>List of mp3 file names</returns>
-        public List<string> GetMp3FileNames(string path, string artist)
+        public List<string> GetMp3FileNames(string path, string artist, ref bool isArtistExistInFolderPath)
         {
             if (string.IsNullOrWhiteSpace(path)) throw new ArgumentNullException($"{nameof(path)} is empty");
             if (string.IsNullOrWhiteSpace(artist)) throw new ArgumentNullException($"{nameof(artist)} is empty");
 
-            FileInfo[] filesInfoArray = new DirectoryInfo(path).GetFiles();
+            FileInfo[] filesInfoArray = new DirectoryInfo(path).GetFiles("*.mp3");
             List<string> fileNames = new List<string>();
-
+            isArtistExistInFolderPath = false;
             if (filesInfoArray.Length > 0)
             {
                 foreach (var file in filesInfoArray)
                 {
                     var fileName = Path.GetFileNameWithoutExtension(file.Name);
-
+                    if(!isArtistExistInFolderPath)
+                        isArtistExistInFolderPath = fileName.ToLower().Contains(artist.ToLower());
                     Regex reg = new Regex(@"[^\p{L}\p{N} ]");
                     fileName = reg.Replace(fileName, String.Empty);
                     fileName = Regex.Replace(fileName, @"[0-9]+", "");
