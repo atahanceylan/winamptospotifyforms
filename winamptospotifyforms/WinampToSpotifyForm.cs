@@ -167,7 +167,7 @@ namespace winamptospotifyforms
                 string albumName = folderPath.Split('\\')[folderPath.Split('\\').Length - 1];
                 string playlistId = await CreatePlaylist(albumName, accessToken);
                 TrackInfo trackInfo = await GetTrackUriAndNames(folderPath, accessToken);
-                bool isTracksAdded = await spotifyClient.AddTrackToPlaylistFunc(playlistId, trackInfo.TrackUri, accessToken);
+                bool isTracksAdded = await spotifyClient.AddTrackToPlaylist(playlistId, trackInfo.TrackUri, accessToken);
                 if (isTracksAdded && trackInfo != null && !string.IsNullOrEmpty(trackInfo.TrackName))
                 {
                     resultTxt.Clear();

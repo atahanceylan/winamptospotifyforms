@@ -179,7 +179,7 @@ namespace winamptospotifyforms
         /// <param name="playlistId">Created playlist ID</param>
         /// <param name="uris">Track uris</param>
         /// <param name="accessToken">Access Token</param>
-        public async Task<bool> AddTrackToPlaylistFunc(string playlistId, string uris, string accessToken)
+        public async Task<bool> AddTrackToPlaylist(string playlistId, string uris, string accessToken)
         {
             if (string.IsNullOrWhiteSpace(playlistId)) throw new ArgumentNullException($"{nameof(playlistId)} is empty");
             if (string.IsNullOrWhiteSpace(uris)) throw new ArgumentNullException($"{nameof(uris)} is empty");
